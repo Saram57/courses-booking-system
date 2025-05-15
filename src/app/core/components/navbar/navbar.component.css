@@ -1,0 +1,32 @@
+.logo {
+  width: 200px;  /* تعديل الحجم حسب ما تراه مناسبًا */
+  height: 120px; /* يمكنك ضبط الارتفاع أيضًا */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;  /* يضمن تمركز اللوجو */
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    display: none !important;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  .offcanvas {
+    width: 250px;
+    background-color: #fff;
+  }
+
+  .offcanvas .nav-link {
+    color: #000 !important;
+    font-weight: 500;
+  }
+}
+
+/* Logo adjustment */
+.logo {
+  max-height: 50px;
+}

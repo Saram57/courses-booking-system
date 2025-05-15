@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; }
+        .about-section { max-width: 800px; margin: 50px auto; padding: 20px; background-color: #f4f4f9; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        p { margin-bottom: 15px; color: #555; }
+        ul { margin: 15px 0; padding: 0 20px; }
+        li { margin-bottom: 10px; }
+  
