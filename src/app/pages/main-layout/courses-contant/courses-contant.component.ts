@@ -12,14 +12,14 @@ import 'swiper/css/effect-coverflow';
   templateUrl: './courses-contant.component.html',
   styleUrls: ['./courses-contant.component.css'],
 })
-export class coursescontantComponent implements  AfterViewInit {
+export class coursescontantComponent implements AfterViewInit {
   swiper?: Swiper; // إضافة متغير لتخزين instance الخاص بـ Swiper
 
-
-
   ngAfterViewInit(): void {
-    this.initializeSwiper();
-    this.setupSlideHoverEffects();
+    if (typeof document !== 'undefined') {
+      this.initializeSwiper();
+      this.setupSlideHoverEffects();
+    }
   }
 
   private initializeSwiper(): void {
@@ -52,26 +52,28 @@ export class coursescontantComponent implements  AfterViewInit {
             stretch: 0,
             depth: 50,
             modifier: 1,
-          }
-        }
-      }
+          },
+        },
+      },
     });
   }
 
   private setupSlideHoverEffects(): void {
-    const slides = document.querySelectorAll<HTMLElement>('.swiper-slide');
-    slides.forEach((slide) => {
-      slide.addEventListener('mouseenter', () => {
-        if (!slide.classList.contains('swiper-slide-active')) {
-          slide.style.transform = 'scale(0.95) translateY(-10px)';
-        }
-      });
+    if (typeof document !== 'undefined') {
+      const slides = document.querySelectorAll<HTMLElement>('.swiper-slide');
+      slides.forEach((slide) => {
+        slide.addEventListener('mouseenter', () => {
+          if (!slide.classList.contains('swiper-slide-active')) {
+            slide.style.transform = 'scale(0.95) translateY(-10px)';
+          }
+        });
 
-      slide.addEventListener('mouseleave', () => {
-        if (!slide.classList.contains('swiper-slide-active')) {
-          slide.style.transform = 'scale(0.9)';
-        }
+        slide.addEventListener('mouseleave', () => {
+          if (!slide.classList.contains('swiper-slide-active')) {
+            slide.style.transform = 'scale(0.9)';
+          }
+        });
       });
-    });
+    }
   }
 }
